@@ -10,14 +10,14 @@ resource "time_sleep" "wait_60_seconds" {
 }
 
 resource "google_project_service" "firestore" {
-  project 	= provider.google.project
+  project 	= "firestore-project-514"
   service 	= "firestore.googleapis.com"
 
   depends_on 	= [time_sleep.wait_60_seconds]
 }
 
 resource "google_firestore_database" "database" {
-  project     			= provider.google.project
+  project     			= "firestore-project-514"
   name        			= "(default)"
   location_id 			= "northamerica-northeast1"
   type        			= "FIRESTORE_NATIVE"
