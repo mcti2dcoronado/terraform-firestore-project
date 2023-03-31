@@ -1,5 +1,5 @@
 provider "google" {
-  project	= "firestore-project-514"
+  project	= "firestore-project-mtl"
   region	= "northamerica-northeast1"
   zone		= "northamerica-northeast1-a"
 }
@@ -10,14 +10,14 @@ resource "time_sleep" "wait_60_seconds" {
 }
 
 resource "google_project_service" "firestore" {
-  project 	= "firestore-project-514"
+  project 	= "firestore-project-mtl"
   service 	= "firestore.googleapis.com"
 
   depends_on 	= [time_sleep.wait_60_seconds]
 }
 
 resource "google_firestore_database" "database" {
-  project     			= "firestore-project-514"
+  project     			= "firestore-project-mtl"
   name        			= "(default)"
   location_id 			= "northamerica-northeast1"
   type        			= "FIRESTORE_NATIVE"
