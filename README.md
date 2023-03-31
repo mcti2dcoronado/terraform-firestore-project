@@ -1,2 +1,3 @@
+# README
 # terraform-firestore-project
-Add a firestore database into a project
+Create a firestore native database into a project
